@@ -1,0 +1,185 @@
+/* General Reset */
+*, *:before, *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-image: url(/mala.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Flex Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 30px;
+}
+
+.diwali-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: gold;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffd700, 0 0 20px rgb(212,65,6), 0 0 30px rgb(240,75,9);
+    animation: spanimation 1s ease-in-out infinite;
+}
+
+.diwali-subtext {
+    font-family: 'Raleway', sans-serif; 
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #37300a;
+    text-shadow: 0 0 10px #ffbb00d4, 0 0 10px #ff8c00;
+}
+
+
+/* Diya Container */
+.diya-container {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin-right: 100px;
+}
+
+/* Diya and Animation Styles */
+.diya {
+    height: 150px;
+    width: 300px;
+    background-color: #fdcf0f;
+    border-radius: 0 0 150px 150px;
+    position: absolute;
+    bottom: 50px;
+    overflow: hidden;
+}
+
+.inside {
+    width: 300px;
+    height: 60px;
+    background-color: #fd500a;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 170px;
+}
+
+.shadow {
+    height: 60px;
+    width: 320px;
+    background-color: rgba(25, 5, 71, 0.5);
+    position: absolute;
+    bottom: 30px;
+    border-radius: 50%;
+}
+
+.flame {
+    height: 170px;
+    width: 170px;
+    background-color: #fdf1c2;
+    border-radius: 160px 0;
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: 36px;
+    animation: scale-up 2s infinite;
+}
+
+@keyframes scale-up {
+    50% {
+        transform: rotate(-45deg) scale(1.05);
+        bottom: 42px;
+    }
+}
+
+.flame:after {
+    content: "";
+    height: 120px;
+    width: 120px;
+    background-color: #f4c631;
+    border-radius: 120px 0;
+    position: absolute;
+    bottom: 0;
+}
+
+.light {
+    height: 330px;
+    width: 330px;
+    background-color: rgba(253, 241, 194, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    bottom: 0;
+}
+
+.light:before, .light:after {
+    content: "";
+    height: 120px;
+    width: 120px;
+    background-color: rgba(253, 241, 194, 0.3);
+    border-radius: 50%;
+    animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+    50% {
+        transform: scale(0.7);
+        opacity: 0.2;
+    }
+}
+
+.light:before {
+    bottom: 30px;
+    right: 60px;
+}
+
+.light:after {
+    top: 50px;
+    left: 80px;
+    animation-delay: 1s;
+}
+
+.line-1, .line-2 {
+    position: absolute;
+    height: 60px;
+    width: 320px;
+    border-bottom: 8px solid #ffffff;
+    border-radius: 50%;
+    left: -10px;
+}
+
+.line-2 {
+    top: 60px;
+}
+
+.dots {
+    height: 60px;
+    width: 320px;
+    border-bottom: 10px dotted #fd500a;
+    position: absolute;
+    border-radius: 50%;
+    top: 30px;
+    left: -10px;
+}
+
+/* Text Animation */
+@keyframes spanimation {
+    from {
+        text-shadow: 0px 0px 50px rgb(165, 62, 22), 0px 0px 20px rgb(165, 62, 22),
+        0px 0px 30px #ffd700, 0px 0px 40px rgb(212,65,6),
+        0px 0px 50px rgb(240,75,9);
+    }
+    to {
+        text-shadow: 0px 0px 40px rgb(16, 197, 46), 0px 0px 20px gold,
+        0px 0px 30px rgb(212,65,6), 0px 0px 60px rgb(221,195,25,0.774),
+        0px 0px 50px rgb(16,175,43,0.863);
+    }
+}
